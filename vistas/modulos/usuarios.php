@@ -126,9 +126,9 @@
     <!--- Entrada subir foto--->
           <div class="form-group">
             <div class="panel">SUBIR FOTO</div>
-            <input type="file" id="nuevaFoto" name="nuevaFoto">
-            <p class="help-block">Perso máximo de la foto 200 MG</p>
-            <img src="vistas/img/usuarios/default/anonimo.png" class="img-thumbnail" width="100px">
+            <input type="file" class="nuevaFoto" name="nuevaFoto">
+            <p class="help-block">Peso máximo de la foto 2 MG</p>
+            <img src="vistas/img/usuarios/default/anonimo.png" class="img-thumbnail previsualizar" width="100px">
             
           </div>         
 
