@@ -17,7 +17,7 @@
       <div class="box">
         <div class="box-header with-border">
           <button class = "btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">
-            Agragar Usuario
+            Agregar Usuario
           </button>
 
 
@@ -81,7 +81,7 @@
     <!--- Modal content--->
     <div class="modal-content">
 
-      <form role="form" method="post" enctype="multipart/form-darta">
+      <form role="form" method="post" enctype="multipart/form-data">
       <div class="modal-header" style="background: #3c8dbc; color: white;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Agregar usuario</h4>    
