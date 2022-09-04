@@ -65,10 +65,15 @@
                   echo '<td><img src="vistas/img/usuarios/default/anonimo.png" class="img-thumbnail" width="40px"></td>';
                 }
 
+                echo '<td>'.$value["perfil"].'</td>';
 
-                echo '<td>'.$value["perfil"].'</td>
-                <td><button class="btn btn-success btn-xs"> Activado</button></td>
-                <td>'.$value["ultimo_login"].'</td>
+                if($value["estado"] != 0){
+                  echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+                }else{
+                  echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario"'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+                }
+
+                echo '<td>'.$value["ultimo_login"].'</td>
 
                 <td>
 
@@ -76,7 +81,7 @@
 
                     <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
 
-                    <button class="btn btn-danger"><i class="fa fa-times"></i></button>
+                    <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
                     
                   </div>
                 </td>
@@ -121,7 +126,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-key"></i></span>
-              <input type="text" class="form-control input-lg"name="nuevoUsuario" placeholder="Ingresar usuario" required>
+              <input type="text" class="form-control input-lg"name="nuevoUsuario" placeholder="Ingresar usuario" id="nuevoUsuario" required>
             </div> 
           </div>
     <!--- Entrada para la contraseña--->
@@ -141,7 +146,7 @@
                 <option value="Operador">Operador</option>
                 <option value="AsesorComercial">Asesor/a Comercial</option>
                 <option value="Financiero">Financiero</option>
-                <option value="Despachp">Despacho</option>
+                <option value="Despacho">Despacho</option>
               </select>
             </div> 
           </div> 
@@ -256,3 +261,9 @@
   </div>
   
 </div>
+
+<?php
+
+$borrarUsuario = new ControladorUsuarios();
+$borrarUsuario -> ctrBorrarUsuario();
+?>
